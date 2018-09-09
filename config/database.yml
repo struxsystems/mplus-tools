@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  url: postgres://hcwdiijqsezrjh:ae0fd4043d57a26925e791f4bf7ac6d124b96e8932bd4ace4466db7975ba0819@ec2-54-235-94-36.compute-1.amazonaws.com:5432/dtocrafgrr4hv
+
+test:
+  <<: *default
+  url: postgres://hcwdiijqsezrjh:ae0fd4043d57a26925e791f4bf7ac6d124b96e8932bd4ace4466db7975ba0819@ec2-54-235-94-36.compute-1.amazonaws.com:5432/dtocrafgrr4hv
+
+  <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
