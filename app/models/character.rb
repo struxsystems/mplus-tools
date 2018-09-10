@@ -13,6 +13,8 @@
 #  verified        :boolean
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  thumbnail_url   :string
+#  guild           :string
 #
 
 class Character < ApplicationRecord
